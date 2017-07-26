@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<title></title>
+	<link href="../css/test.css" rel="stylesheet"/>
+</head>
+<body>
+	<header class="cs-header">
+    <!-- <a class="back-btn ">
+    <i class="sprite-icon-arrow-left"></i>返回
+    </a> -->
+    <h1 class="title">管理系统</h1>
+</header>
+
+<div class="content">
+    <section class="modules">
+        <div class="module contract ">
+        业务接洽
+        </div>
+        <div class="module manage">
+        业务管理
+        </div>
+        <div class="module approval">
+        业务审批
+        </div>
+    </section>
+</div>
+</body>
+<!-- <script src="../js/simona/vendor/require.js" data-main="../js/simona"></script> -->
+<script>
+var require = {
+          urlArgs: "bust=" +  (new Date()).getTime()
+      };
+
+      var csConfig ={
+          module:'../js/modules/test'
+
+      };
+//动态算rem
+(function(doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+            // if (docEl.style.fontSize) return;
+            clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            document.body.style.fontSize = docEl.style.fontSize;
+        };
+
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+<script src="../js/simona/simona.js" ></script>
+</html>
